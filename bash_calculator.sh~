@@ -1,0 +1,32 @@
+#!/bin/bash
+
+while true
+do
+	read first operation second
+
+	if [[ $first == "exit" ]]; then 
+		echo bye 
+		exit
+	elif [[ $operation == "+" ]]; then
+		let "res = $first + $second"
+		echo "$res"
+	elif [[ $operation == "-" ]]; then
+		let "res = $first - $second"
+		echo "$res"
+	elif [[ $operation == "*" ]]; then
+		let "res = $first * $second"
+		echo "$res"
+	elif [[ $operation == "/" ]]; then
+		let "res = $first / $second"
+		echo "$res"
+	elif [[ $operation == "%" ]]; then
+		let "res = $first % $second"
+		echo "$res"
+	elif [[ $operation == "**" ]]; then
+		let "res = $first ** $second"
+		echo "$res"
+	else
+		echo error
+		exit
+	fi
+done
